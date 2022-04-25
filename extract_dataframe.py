@@ -200,7 +200,7 @@ class TweetDfExtractor:
     def get_tweet_df(self, save=True) -> pd.DataFrame:
         """Save a processed tweet list."""
         columns = ['created_at', 'source', 'original_text', 'polarity',
-                   'subjectivity', 'lang', 'favorite_count', 'retweet_count',
+                   'subjectivity', 'lang', 'favourite_count', 'retweet_count',
                    'original_author', 'followers_count', 'friends_count',
                    'possibly_sensitive', 'hashtags', 'user_mentions', 'place']
 
