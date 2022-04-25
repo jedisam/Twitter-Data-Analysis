@@ -32,10 +32,9 @@ class TestTweetDfExtractor(unittest.TestCase):
         self.df = TweetDfExtractor(tweet_list[:5])
         # tweet_df = self.df.get_tweet_df()
 
-    # def test_find_statuses_count(self):
-    #     """Test find status count module."""
-    #     self.assertEqual(self.df.find_statuses_count(), [
-    #                      204051, 3462, 6727, 45477, 277957])
+    def test_find_statuses_count(self):
+        """Test find status count module."""
+        self.assertEqual(self.df.find_statuses_count(), [40, 40, 40, 40, 40])
 
     def test_find_full_text(self):
         """Test find full text method."""
