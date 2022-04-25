@@ -75,3 +75,4 @@ if __name__ == "__main__":
     df = cleaner.remove_non_english_tweets(df)
 
     df.to_csv('cleaned_tweet_data.csv', index=False)
+    df.to_json('data/cleaned_tweet_data.json')
