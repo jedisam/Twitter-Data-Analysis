@@ -5,8 +5,8 @@ from textblob import TextBlob
 
 
 def read_json(json_file: str) -> list:
-    """
-    json file reader to open and read json files into a list
+    """Json file reader to open and read json files into a list.
+
     Args:
     -----
     json_file: str - path of a json file
@@ -21,14 +21,19 @@ def read_json(json_file: str) -> list:
 
 
 class TweetDfExtractor:
-    """
-    this function will parse tweets json into a pandas dataframe
+    """Return  function will parse tweets json into a pandas dataframe.
+
     Return
     ------
     dataframe
     """
 
     def __init__(self, tweets_list):
+        """Initialize the class TweetDfExtractor.
+
+        Args:
+            tweet_list(List): Initializes the class with list.
+        """
         self.tweets_list = tweets_list
 
     def find_statuses_count(self) -> list:
@@ -196,7 +201,7 @@ class TweetDfExtractor:
         return location
 
     def get_tweet_df(self, save=True) -> pd.DataFrame:
-        """Require column to be generated you should be creative and add more features."""
+        """Save a processed tweet list."""
         columns = ['created_at', 'source', 'original_text', 'polarity',
                    'subjectivity', 'lang', 'favorite_count', 'retweet_count',
                    'original_author', 'followers_count', 'friends_count',
@@ -229,7 +234,7 @@ class TweetDfExtractor:
 
 
 if __name__ == "__main__":
-    # required column to be generated you should be creative and add more features
+    # required column to be generated you should be creative
     columns = ['created_at', 'source', 'original_text', 'clean_text',
                'sentiment', 'polarity', 'subjectivity', 'lang',
                'favorite_count', 'retweet_count', 'original_author',
@@ -241,4 +246,4 @@ if __name__ == "__main__":
     tweet = TweetDfExtractor(tweet_list)
     tweet_df = tweet.get_tweet_df()
 
-    # use all defined functions to generate a dataframe with the specified columns above
+    # use all defined functions to generate a dataframe
