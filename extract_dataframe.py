@@ -43,7 +43,7 @@ class TweetDfExtractor:
             list: Returns a list of statuses count
         """
         statuses_count = [data['user']['statuses_count']
-                          for data in self.tweets_list]
+                          if 'user' in data else '' for data in self.tweets_list]
         return statuses_count
 
     def find_full_text(self) -> list:
@@ -99,7 +99,7 @@ class TweetDfExtractor:
             list: A list of screen name.
         """
         screen_name = [data['user']['screen_name']
-                       for data in self.tweets_list]
+                       if 'user' in data else '' for data in self.tweets_list]
         return screen_name
 
     def find_followers_count(self) -> list:
@@ -109,7 +109,7 @@ class TweetDfExtractor:
             list: A list of followers count.
         """
         followers_count = [data['user']['followers_count']
-                           for data in self.tweets_list]
+                           if 'user' in data else '' for data in self.tweets_list]
         return followers_count
 
     def find_friends_count(self) -> list:
@@ -119,7 +119,7 @@ class TweetDfExtractor:
             list: A list of friends count.
         """
         friends_count = [data['user']['followers_count']
-                         for data in self.tweets_list]
+                         if 'user' in data else '' for data in self.tweets_list]
         return friends_count
 
     def is_sensitive(self) -> list:
@@ -128,11 +128,8 @@ class TweetDfExtractor:
         Returns:
             list: _description_
         """
-        try:
-            is_sensitive = [x['possibly_sensitive']
-                            for x in self.tweets_list if 'possibly_sensitive' in x.keys()]
-        except KeyError:
-            is_sensitive.append(None)
+        is_sensitive = [data['possibly_sensitive']
+                        if 'possibly_sensitive' in data.keys() else '' for data in self.tweets_list]
 
         return is_sensitive
 
@@ -163,7 +160,8 @@ class TweetDfExtractor:
         Returns:
             list: A list of hastags.
         """
-        hashtags = [data['entities']['hashtags'] for data in self.tweets_list]
+        hashtags = [data['entities']['hashtags'] if 'entities' in data.keys(
+        ) else '' for data in self.tweets_list]
         return hashtags
 
     def find_mentions(self) -> list:
@@ -173,7 +171,8 @@ class TweetDfExtractor:
             list: A list of mentions.
         """
         mentions = [data['entities']['user_mentions']
-                    for data in self.tweets_list]
+                    if 'entities' in data.keys(
+        ) else '' for data in self.tweets_list]
         return mentions
 
     def find_lang(self) -> list:
@@ -192,12 +191,10 @@ class TweetDfExtractor:
         Returns:
             list: A list of location.
         """
-        location = []
-        try:
-            for tweet in self.tweets_list:
-                location.append(tweet['user']['location'])
-        except TypeError:
-            location.append('')
+        location = [data['user']['location']
+                    if 'user' in data.keys(
+        ) else '' for data in self.tweets_list]
+
         return location
 
     def get_tweet_df(self, save=True) -> pd.DataFrame:
