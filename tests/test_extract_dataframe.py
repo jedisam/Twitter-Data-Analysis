@@ -3,7 +3,6 @@ import sys
 import unittest
 import zipfile
 
-
 import pandas as pd
 from extract_dataframe import TweetDfExtractor, read_json
 

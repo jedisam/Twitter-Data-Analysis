@@ -1,6 +1,6 @@
 import json
-import pandas as pd
 
+import pandas as pd
 from textblob import TextBlob
 
 
