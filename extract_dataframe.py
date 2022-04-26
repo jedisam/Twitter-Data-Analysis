@@ -109,7 +109,7 @@ class TweetDfExtractor:
             list: A list of followers count.
         """
         followers_count = [data['user']['followers_count']
-                           if 'user' in data else '' for data in self.tweets_list]
+                           if 'user' in data else 0 for data in self.tweets_list]
         return followers_count
 
     def find_friends_count(self) -> list:
@@ -118,8 +118,8 @@ class TweetDfExtractor:
         Returns:
             list: A list of friends count.
         """
-        friends_count = [data['user']['followers_count']
-                         if 'user' in data else '' for data in self.tweets_list]
+        friends_count = [data['user']['friends_count']
+                         if 'user' in data else 0 for data in self.tweets_list]
         return friends_count
 
     def is_sensitive(self) -> list:
@@ -218,6 +218,7 @@ class TweetDfExtractor:
         hashtags = self.find_hashtags()
         mentions = self.find_mentions()
         location = self.find_location()
+        # print("LOCC: ", location[:100])
         data = zip(created_at, source, text, polarity, subjectivity,
                    lang, fav_count, retweet_count, screen_name, follower_count,
                    friends_count, sensitivity, hashtags, mentions, location)
