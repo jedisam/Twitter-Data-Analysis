@@ -2,11 +2,10 @@ import os
 import sys
 import unittest
 
-import pandas as pd
 import numpy
-from pandas._libs.tslibs.timestamps import Timestamp
-
+import pandas as pd
 from clean_tweets_dataframe import Clean_Tweets
+from pandas._libs.tslibs.timestamps import Timestamp
 
 sys.path.append(os.path.abspath(os.path.join('../..')))
 
