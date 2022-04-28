@@ -2,11 +2,8 @@ import sys
 from re import sub
 
 import nltk
-import pandas as pd
-import seaborn as sns
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
-from nltk.tokenize import TweetTokenizer
 
 from logger import Logger
 
