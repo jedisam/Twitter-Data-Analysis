@@ -1,23 +1,27 @@
 # Twitter-Data-Analysis
 
-### So here are the bare minimum requirement for completing this task
+It is an analysis done on data extracted from twitter based on chosen hashtags. The tweets focuses on war between Ukraine and Russia as well as global inflation rates.
 
-1. Fork repository to your github account
-2. Create a branch called “fix_bug” to fix the bugs in the fix_clean_tweets_dataframe.py and fix_extract_dataframe.py 
-3. In branch `fix_bug` copy or rename `fix_clean_tweets_dataframe.py` to `clean_tweets_dataframe.py` and `fix_extract_dataframe.py`  to `extract_dataframe.py` 
-4. Fix the bugs on `clean_tweets_dataframe.py` and `extract_dataframe.py` 
-5. Multiple times push the code you are working on to git, and once the fix is complete, merge the `fix_bug` branch to master
-6. Create a new branch called `make_unittest` for creating a new unit test for extract_dataframe.py code.
-7. After completing the unit test writing, merge  “make_unittest”  to main branch
-8. In all cases when you merge, make sure you first do Pull Request, review, then accept the merge.
-9. Setup Github Actions CI to your repository such that when you git push new code (or merge a branch) to the main branch, the unit test in tests/*.py runs automatically. 10. All tests should pass.
+## Usage
+1. Run the extract and clean modules
+```python
+python extract_dataframe.py
+python clean_tweets_dataframe.py
+```
+## Test
+To test the methods written in the modules use the pytest package and run:
+```python
+pytest
+```
+## Screenshots
+![Wordcloud](https://drive.google.com/file/d/1KShckOM2ZCro2xmGOf8Ubd7npkA-5j47/view?usp=sharing/468x300?text=Word+cloud)
 
-After Completing this Challenge, you would have explore  
 
-- Unittesting
-- Modular Coding
-- Software Engineering Best Practices
-- Python Package Structure
-- Bug Fix (Debugging)
 
-Have Fun and Cheers
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
