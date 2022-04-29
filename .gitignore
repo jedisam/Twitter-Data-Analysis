@@ -2,3 +2,4 @@ __pycache__/
 data/
 a.json
 .~locke.processed_tweet_data.csv$
+.env

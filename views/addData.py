@@ -52,8 +52,9 @@ class DBoperations:
         """
         conn, cur = DBoperations.DBConnect(self)
         # cur.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
-        conn.commit()
-        cur.close()
+        return conn
+        # conn.commit()
+        # cur.close()
 
     def createTables(self, dbName: str) -> None:
         """

@@ -14,7 +14,9 @@ def app():
     st.write(
         'Go to the data navigation to learn more about the data and the visualization page to get insight of the Data.')
     # col1, col2 = st.columns(2)
-    # image = Image.open('./wordcloud.png')
+    image = Image.open('../Images/wordcloud.png')
+    st.image(image, caption="Word cloud analysis", use_column_width=True)
+
     # # image = Image.open('./wordcloud.png')
     # st.image(image, caption='Enter any caption here')
 
