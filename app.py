@@ -1,8 +1,10 @@
 import streamlit as st
 from multiapp import MultiApp
-from views import home, data, model
+from views import home, data, visualization
 
 app = MultiApp()
+
+st.set_page_config(page_title="Economic Data Analysis")
 
 st.title("Tweet Sentiment Analysis")
 
@@ -13,7 +15,7 @@ st.markdown("""
 
 app.add_app("Home", home.app)
 app.add_app("Data", data.app)
-app.add_app("Model", model.app)
+app.add_app("Model", visualization.app)
 
 #  main app
 app.run()

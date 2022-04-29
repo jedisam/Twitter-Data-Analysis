@@ -3,18 +3,29 @@
 It is an analysis done on data extracted from twitter based on chosen hashtags. The tweets focuses on war between Ukraine and Russia as well as global inflation rates.
 
 ## Usage
-1. Run the extract and clean modules
+1. Manual build
+   Run the extract and clean modules
 ```python
 python extract_dataframe.py
 python clean_tweets_dataframe.py
 ```
+2. Docker(Recommonded)
+   1. git clone https://github.com/jedisam/Twitter-Data-Analysis.git
+   2. Extract file
+
+```python
+cd Twitter-Data-Analysis
+docker-compose up
+```
+    This will up a postgres database in on local pc and connect with streamlit app
+
 ## Test
 To test the methods written in the modules use the pytest package and run:
 ```python
 pytest
 ```
 ## Screenshots
-![Wordcloud](https://drive.google.com/file/d/1KShckOM2ZCro2xmGOf8Ubd7npkA-5j47/view?usp=sharing/468x300?text=Word+cloud)
+![Wordcloud](Images/wordcloud.png?raw=true "Word Cloud")
 
 
 
