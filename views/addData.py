@@ -13,7 +13,7 @@ class DBoperations:
             # engine = create_engine(
             #     'postgresql+psycopg2://postgres:password@localhost/twitter')
             conn = psycopg2.connect(
-                user='postgres', password='password', host='127.0.0.1', port='5432'
+                database="twitter", user='postgres', password='password', host='127.0.0.1', port='5432'
             )
             cursor = conn.cursor()
             cursor.execute("select version()")
@@ -44,7 +44,7 @@ class DBoperations:
         -------
         """
         conn, cur = DBoperations.DBConnect(self)
-        cur.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
+        # cur.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
         conn.commit()
         cur.close()
 
@@ -215,5 +215,5 @@ def app():
 
 if __name__ == '__main__':
     db = DBoperations()
-    db.createDB("tweets")
+    db.createDB("twitter")
     # app()
