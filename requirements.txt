@@ -13,8 +13,6 @@ pytest==7.1.2
 requests==2.26.0
 scikit-learn==1.0.2
 scipy==1.8.0
-snowflake-connector-python==2.7.1
-snowflake-sqlalchemy==1.3.3
 SQLAlchemy==1.4.31
 streamlit==1.8.1
 textblob==0.17.1
