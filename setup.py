@@ -7,7 +7,7 @@ with open('README.md') as readme_file:
 
 requirements = ['mock==4.0.3', 'pytest==7.1.1']
 
-test_requirements = ['pytest>=3', ]
+test_requirements = ['textblob', 'pandas', 'matplotlib', 'sklearn', 'nltk', 'gensim', 'stemmer', 'wordcloud', 'streamlit', 'sql', 'pytest>=3', ]
 
 setup(
     author="Yididiya Samuel",
@@ -17,7 +17,7 @@ setup(
     install_requires=requirements,
     long_description=readme,
     include_package_data=True,
-    keywords='pytest',
+    keywords='Topic_modeling, Sentiment_analysis, EDA, Data_Preprocessing, unit_testing, hot_issues, pytest',
     name='Twitter Data Analysis',
     packages=find_packages(include=['src', 'src.*']),
     test_suite='Tests',
